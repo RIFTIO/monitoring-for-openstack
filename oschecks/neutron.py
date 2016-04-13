@@ -23,7 +23,11 @@ import datetime
 import logging
 import os
 import re
-import urlparse
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 from keystoneclient.v2_0 import client
 from neutronclient.neutron import client as neutron
